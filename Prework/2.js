@@ -333,6 +333,7 @@ function exercise1(num1) {
   // Congrats, you made it to the end! You rock!
   // Did you find this easy or hard? If you used references, which ones helped you?
   // Please answer in a comment below.
-  //
-  
+  /* I utilized Google and found the site W3 schools to be most helpful since 
+  it provided detailed breakdowns & explanations
+  */
   // Email your file to us or commit your file to GitHub and email us a link.
