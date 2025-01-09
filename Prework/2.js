@@ -161,7 +161,7 @@ function exercise1(num1) {
   quotes is a boolean
    */
   
-  // EXERCISE 6.***ASK LISA***
+  // EXERCISE 6.
   // Here, assign the value of true to answer6 if:
   // `varA` and `varB` are equal, but `varA` or `varB` does not equal `varC`
   // in the event this is not the case, change the value of answer6 to false
@@ -171,9 +171,9 @@ function exercise1(num1) {
     // Write your code for the exercise below here:
     // -------------------------------------------
 
-    if (varA = varB) {
+    if (varA === varB) {
       answer6 = true;
-    } else if (varA != varC && varB != varC ) {
+    } else if (varA !== varC && varB !== varC ) {
       answer6 = false;
     } else {
       answer6 = false;
@@ -183,8 +183,8 @@ function exercise1(num1) {
     // --------------------------------------------
     return answer6;
   }
- // console.log(exercise6(1,1,1));
- //console.log(exercise6(2,3,4)); return false b/c a || b != c
+ console.log(exercise6(1,1,1));
+ console.log(exercise6(2,3,4)); //return false b/c a || b != c
   
   // EXERCISE 7.
   // Use a switch conditional statement with case clauses such that if `num7` is
@@ -253,7 +253,7 @@ function exercise1(num1) {
   // console.log(exercise8(11, 12, 10, 15));
   // console.log(exercise8(8, 16, 10, 15));
   
-  // EXERCISE 9.***ASK LISA
+  // EXERCISE 9.
   // In this exercise, if `item` is a number, follow the rules given in Exercise 7
   // except that `answer7` is replaced by `answer9`
   // If `item` is not a number, then assign a value to answer9 of:
@@ -262,10 +262,11 @@ function exercise1(num1) {
   // "Please send a number, that was a boolean."
   function exercise9(item) {
     let answer9;
-    // --------------------------------------------
-    // Write your code for the exercise below here:
-    // --------------------------------------------
-     if (item) {
+  //   // --------------------------------------------
+  //   // Write your code for the exercise below here:
+  //   // --------------------------------------------
+  
+  if (item) {
       switch(item) {
       case 1:
         answer9 = "You won!";
@@ -279,18 +280,16 @@ function exercise1(num1) {
         answer9 = "You are one in a million!";
         break;
       default:
-        answer9 = "Thanks for that!";
+        answer9 = `Please send a number, that was a ${typeof item}`;
     } 
-  } else {
-      answer9 = `Please send a number, that was a ${typeof item}`;
-    }
-    // --------------------------------------------
-    // And above here
-    // --------------------------------------------
+  } 
+  //   // --------------------------------------------
+  //   // And above here
+  //   // --------------------------------------------
     return answer9;
   }
-  //console.log(exercise9(false));
-
+  console.log(exercise9(55)); //true should return boolean
+  
   // EXERCISE 10.
   // This question is a modified version of a classic programming question
   // called "Fizz Buzz"
