@@ -63,14 +63,26 @@ function myFunc(numbers) {
 
 // Exercise 12. Make an object called me that contains the following keys: name, favoriteAnimal, favoriteNumber
 // The values of those keys can be whatever you choose.
-
+const me = {
+    myName: "Courey",
+    favoriteAnimal: "turtle",
+    favoriteNumber: 8
+};
+console.log(me);
 // Exercise 13. Add another 2 keys and values to the object (you choose what they are)
-
+me.faveColor = "blue";
+me.faveCandy = "Gummies";
+console.log(me);
 // Exercise 14. Update the favoriteAnimal value to something different
-
+me.favoriteAnimal = 'panda';
+console.log(me);
 // Exercise 15. Print the value of favoriteAnimal.
+console.log(me.favoriteAnimal);
 // Note: there are at least 2 ways to get the value of a key, try to write both.
+let values = Object.values(me); //first way to get values
+console.log(`values`, values);
 
+console.log(me.myName); //second way to get values
 // Congrats, you made it to the end!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
