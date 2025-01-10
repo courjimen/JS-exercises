@@ -266,7 +266,9 @@ function exercise1(num1) {
   //   // Write your code for the exercise below here:
   //   // --------------------------------------------
   
-  if (item) {
+  if (typeof item !==  "number") {
+    answer9 = `Please send a number, that was a ${typeof item}`;
+  } else {
       switch(item) {
       case 1:
         answer9 = "You won!";
@@ -280,7 +282,7 @@ function exercise1(num1) {
         answer9 = "You are one in a million!";
         break;
       default:
-        answer9 = `Please send a number, that was a ${typeof item}`;
+        answer9 = "Thanks for that!"
     } 
   } 
   //   // --------------------------------------------
@@ -288,7 +290,7 @@ function exercise1(num1) {
   //   // --------------------------------------------
     return answer9;
   }
-  console.log(exercise9(55)); //true should return boolean
+  console.log(exercise9(true));
   
   // EXERCISE 10.
   // This question is a modified version of a classic programming question
