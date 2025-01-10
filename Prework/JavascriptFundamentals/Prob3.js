@@ -5,3 +5,14 @@ John: 100,
 Ann: 160,
 Pete: 130
 }*/
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+    }
+let val = Object.values(salaries).slice(0,3);
+let sum = 0
+for(let i=0; i<val.length; i++){
+    sum = sum + val[i]
+}
+console.log(sum);
