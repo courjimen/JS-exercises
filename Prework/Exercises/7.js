@@ -45,14 +45,13 @@ function stringLastIndexOf(str, charac) {
     for (let index = str.length -1; index >= 0; index--) {
         const character = str[index]; 
        if(character === charac){
-        console.log("found it", charac, index);
         return index;
        } 
     }
     return -1;
 }
-console.log(stringLastIndexOf("dog", "e"));
-// console.log(stringLastIndexOf("awesome", "e"));
+console.log(stringLastIndexOf("awesome", "e"));
+
 // Exercise 4. Write a function called removeFromString, which accepts a string, a starting index (number) and a number of characters to remove.
 // The function should return a new string with the characters removed.
 // Examples:
@@ -61,7 +60,14 @@ console.log(stringLastIndexOf("dog", "e"));
 // removeFromString('Hello School', 0, 6) // --> 'School'
 // removeFromString('Hello School', 2, 4) // --> 'HeSchool'
 // removeFromString('Hello School', 6, 400) // --> 'Hello '
-
+function removeFromString (str, index, count) {
+    let newString = '';
+    for(let i=0; i<str.length; i++) {
+        if(i<index || i>index + count) {
+            newString += str[i];
+        }
+    } return newString;
+} console.log(removeFromString('Elie', 2, 2));
 // Exercise 5. Write a function called indexOf, which accepts an array and a number.
 // The function should return the first index at which the value exists or -1 if the value is not found.
 // IMPORTANT: Do not use the built in array.indexOf() function!
