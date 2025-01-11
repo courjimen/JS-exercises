@@ -15,6 +15,10 @@
 // prependToString('awesome', 'very') // --> 'veryawesome'
 // prependToString('world', 'hello ') // --> 'hello world'
 // prependToString('nothing', '') // --> 'nothing'
+function prependToString(str, str2) {
+    console.log(str2 + str);
+}
+prependToString("world", "hello");
 
 // Exercise 2. Write a function called stringIncludes, which accepts two strings: the first string is a word and the second string is a single character.
 // The function should return true if the first string includes the character, otherwise it should return false.
@@ -22,14 +26,33 @@
 // Examples:
 // stringIncludes('awesome', 'e'); // --> true
 // stringIncludes('awesome', 'z'); // --> false
-
+function stringIncludes(str, charac) {
+    if (str.search(charac) !== -1) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+stringIncludes("awesome", "e");
+stringIncludes("dude", "z");
 // Exercise 3. Write a function called stringLastIndexOf, which accepts two strings: the first is a word and the second is a single character.
 // The function should return the last index at which the character exists or -1 if the character is not found.
 // IMPORTANT: Do not use the built in "string".lastIndexOf() function!
 // Examples:
 // stringLastIndexOf('awesome', 'e'); // --> 6
 // stringLastIndexOf('awesome', 'z'); // --> -1
-
+function stringLastIndexOf(str, charac) {
+    for (let index = str.length -1; index >= 0; index--) {
+        const character = str[index]; 
+       if(character === charac){
+        console.log("found it", charac, index);
+        return index;
+       } 
+    }
+    return -1;
+}
+console.log(stringLastIndexOf("dog", "e"));
+// console.log(stringLastIndexOf("awesome", "e"));
 // Exercise 4. Write a function called removeFromString, which accepts a string, a starting index (number) and a number of characters to remove.
 // The function should return a new string with the characters removed.
 // Examples:
