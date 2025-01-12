@@ -38,9 +38,10 @@ function keys(obj) {
 // let obj3 = {};
 // values(obj3); // []
 function values(object) {
-    let valArr = [];
+    let valArr = []; // [true, "Lane"]
     for (let key in object ) {
-        valArr.push(object[key]);
+      const value = object[key]
+        valArr.push(value);
     } return valArr;
 }
 let object = { a: 1, b: 2, c: 3 };
@@ -114,4 +115,12 @@ console.log(stringFromObject({ a: 1, b: '2' }));
 // minMaxKeyInObject({ 2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e' });
 // [1, 10]
 // minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
+// minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
 // [1, 4]
+const minMaxKeyInObject = (obj) => {
+  const keys = Object.keys(obj); // [2, 7, 1];
+  const lowestKey = Math.min(...keys);
+  const highestKey = Math.max(...keys);
+  return [lowestKey, highestKey];
+} 
+console.log(minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' }));
