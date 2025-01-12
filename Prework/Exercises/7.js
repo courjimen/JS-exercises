@@ -60,14 +60,17 @@ console.log(stringLastIndexOf("awesome", "e"));
 // removeFromString('Hello School', 0, 6) // --> 'School'
 // removeFromString('Hello School', 2, 4) // --> 'HeSchool'
 // removeFromString('Hello School', 6, 400) // --> 'Hello '
-function removeFromString (str, index, count) {
-    let newString = '';
-    for(let i=0; i<str.length; i++) {
-        if(i<index || i>index + count) {
-            newString += str[i];
-        }
-    } return newString;
-} console.log(removeFromString('Elie', 2, 2));
+
+function removeFromString(str, index, deleteCount){
+    const arr = str.split(""); // ["E","l","i","e"];
+    arr.splice(index, deleteCount);// 0,1 -> E
+    return arr.join("");
+}
+
+console.log(removeFromString('Elie', 0, 1)); //logged ie
+console.log(removeFromString('Hello School', 0, 6)) // --> 'School'
+console.log(removeFromString('Hello School', 2, 4)) // --> 'HeSchool'
+// console.log(removeFromString('Hello School', 6, 400));// --> 'Hello '
 // Exercise 5. Write a function called indexOf, which accepts an array and a number.
 // The function should return the first index at which the value exists or -1 if the value is not found.
 // IMPORTANT: Do not use the built in array.indexOf() function!
