@@ -26,25 +26,31 @@ const myFriends = [
     { firstname: 'Eamonn', lastname: 'Vang', age: 21 },
     { firstname: 'Haya', lastname: 'Mcdougall', age: 31 },
 ];
+// () => {}
+const AVERAGE_AGE = 32;
+//access the friends.age > 32
 
-// initials: grab the first letter of our firstname and last name
-let initials = myFriends.map(friend => friend.firstname[0]+friend.lastname[0]);// console.log(initials)
+const oldFriends = myFriends.filter((person) => person.age > 32);
 
-// average age: total age = (sum of all ages)/num of friends
-// reduce method
+// console.log(oldFriends);
 
-let average = myFriends.reduce((sum, friend)=> sum + friend.age, 0)/10
-// console.log(average);
+//return intials and age in new arr
+const initials = oldFriends.map((friend) => {
+    const friendInitials = friend.firstname[0] + friend.lastname[0];
+    // console.log(friendInitials);
+    const friendAge = friend.age;
+    // Expected output: [ 'AB: 35', 'SW: 45', 'AE: 38', 'IH: 46' ]
+    return `${friendInitials}: ${friendAge}`
+})
+console.log(initials);
 
-//Gets an array of all friends older than the average age
-//filter method
+const findAverageAge = () => {
+    let sum = 0;
+    let average = 0;
+    myFriends.map(friend => {
+        sum += friend.age;
+        friend.initials = friend.firstname[0] + friend.lastname[0];
+    });
 
-let oldies = myFriends.filter(friend => friend.age > average);
-// console.log(oldies);
-
-// Gets an array of strings listing the initials and age Expected output: [ 'AB: 35', 'SW: 45', 'AE: 38', 'IH: 46' ]
-// join the results of initials and age
-let results = oldies.map(friend => friend.firstname[0]+friend.lastname[0]+ ": "+ friend.age)
-console.log(results);
-
-
+    average = sum / myFriends.length;
+}
