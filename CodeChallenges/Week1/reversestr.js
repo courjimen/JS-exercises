@@ -15,3 +15,26 @@ function reverseString(str) { // create a function the accepts a string variable
 reverseString("hello");
 reverseString("Howdy");
 reverseString("Greetings from Earth");
+
+/*Given an input string, reverse the string word by word, the first word will be the last, and so on.
+
+Examples
+reverseWords(" the sky is blue") ➞ "blue is sky the"
+
+reverseWords("hello world!  ") ➞ "world! hello"
+
+reverseWords("a good example") ➞ "example good a"
+ */
+
+function reverseWords(str) {
+    const word = str.split(' ')
+    // console.log(word)
+    const revWord = word.reverse()
+    return revWord.join(" ")
+}
+
+console.log(reverseWords(" the sky is blue"))
+
+console.log(reverseWords("hello world!"))
+
+console.log(reverseWords("a good example")) 
