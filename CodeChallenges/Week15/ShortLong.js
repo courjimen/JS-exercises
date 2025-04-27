@@ -29,9 +29,30 @@ let array = [a, b]
     return array.flat().join("") //combinded arrays w/flat and joined both arrays .join("")= no separators, .join()= commas, .join("-") hyphenated
 } 
 
-console.log(shortLong("1", "22")) //Output "1221"
-console.log(shortLong("22", "1")) //Output "1221"
-console.log(shortLong("345", "12")) //Output "1234512"
-console.log(shortLong("2", "1234")) //Output "212342"
-console.log(shortLong("22", "")) //Output "22"
+//SECOND VERSION WITH REDUCE
+function shortLongShort (a, b) {
+    const array = [a, b]
+//reduce method
+    let shortStr = array.reduce(function (a, b) {
+        return a.length > b.length ? b : a
+    })
+    // console.log(shortStr)
+    if (shortStr === array[0]){
+        array.push(shortStr)
+    } else {
+        array.unshift(shortStr)
+    }
+    return array.flat().join("")
+}
+
+
+
+
+
+
+console.log(shortLongShort("1", "22")) //Output "1221"
+console.log(shortLongShort("22", "1")) //Output "1221"
+// console.log(shortLong("345", "12")) //Output "1234512"
+// console.log(shortLong("2", "1234")) //Output "212342"
+// console.log(shortLong("22", "")) //Output "22"
 
