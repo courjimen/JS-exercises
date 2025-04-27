@@ -1,4 +1,8 @@
-/* Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (zero length ). The length of string is not always the same as the number of characters
+/* PART ONE: Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. 
+
+PART TWO: The strings will not be the same length, but they may be empty (zero length). 
+
+EDGE CASE: The length of string is not always the same as the number of characters
 
 Example 1 			      Example 2
 Input:  ("1", "22")		  Input: ("22", "1")
@@ -23,8 +27,11 @@ let array = [a, b]
         array.unshift(shortStr)
     } 
     return array.flat().join("") //combinded arrays w/flat and joined both arrays .join("")= no separators, .join()= commas, .join("-") hyphenated
-
 } 
 
 console.log(shortLong("1", "22")) //Output "1221"
 console.log(shortLong("22", "1")) //Output "1221"
+console.log(shortLong("345", "12")) //Output "1234512"
+console.log(shortLong("2", "1234")) //Output "212342"
+console.log(shortLong("22", "")) //Output "22"
+
